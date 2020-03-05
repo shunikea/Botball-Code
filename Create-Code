@@ -1,0 +1,524 @@
+#include <kipr/botball.h>
+
+int main()
+{
+    printf("Hello World\n");
+    
+    create_connect();
+    
+    wait_for_light(0);
+    
+    shut_down_in(118);
+    
+    create_full();
+    
+    int distd0 = 1200; //<--------- the position you want it at//
+    int distd1 = 800;
+    
+    enable_servos();
+ 
+    do//<----------- the position you want it to got to//
+    {
+        set_servo_position(0,distd0); //<-----servo port//
+        msleep(100);
+        set_servo_position(1,distd1); //<-----servo port//
+        msleep(100);
+        distd0=distd0-50;//<------------- speed you want it at
+        distd1=distd1+52;
+    }while (distd0 >= 35 && distd1 <= 2040);
+    
+    mav(0,-100);
+    mav(1,90);
+    msleep(1800);    
+    
+    ao();
+    
+    create_drive_straight(-1);
+    msleep(2000);
+    
+    create_drive_straight(1);
+    msleep(2000);
+    
+    create_stop();
+    
+    int distp0 = 35; //<--------- the position you want it at//800
+    int distp1 = 2040;//1996
+    
+    enable_servos();
+ 
+    do//<----------- the position you want it to got to//
+    {
+        set_servo_position(0,distp0); //<-----servo port//
+        msleep(100);
+        set_servo_position(1,distp1); //<-----servo port//
+        msleep(100);
+        distp0=distp0+50;//<------------- speed you want it at
+        distp1=distp1-52;
+    }while (distp0 <= 1400 && distp1 >= 600);
+    
+    create_drive_straight(-1);
+    msleep(1000);
+    
+    create_drive_straight(1);
+    msleep(1000);
+    
+    create_drive_direct(190,170);
+    msleep(1800);
+    
+    create_stop();
+    
+    mav(1,-100);
+    msleep(1900);
+    
+    ao();
+    
+    create_drive_direct(165,215);
+    msleep(2500);
+
+    create_stop();
+    
+    mav(0,100);
+    msleep(1900);
+    
+    ao();
+    
+    create_drive_direct(100,-100);
+    msleep(1460);
+    
+    create_drive_straight(120);
+    msleep(2630);
+    
+    create_stop();
+    
+    mav(0,-100);
+    mav(1,90);
+    msleep(1800);
+    
+    ao();
+    
+    create_drive_direct(-190,-175);
+    msleep(1950);
+    
+    create_drive_straight(-170);
+    msleep(1750);
+    
+    create_drive_straight(60);
+    msleep(1430);
+    
+    create_drive_direct(-140,140);
+    msleep(1680);
+    
+    create_drive_direct(130,117);
+    msleep(2643);
+    
+    create_stop();
+    
+    mav(0,500);
+    msleep(450);
+    
+    ao();
+    
+    create_drive_straight(-180);
+    msleep(2350);
+    
+    create_drive_direct(140,-140);
+    msleep(1350);
+    
+    create_drive_straight(-180);
+    msleep(1300);
+    
+    create_stop();
+    
+    int dist0 = 1200; //<--------- the position you want it at//
+    int dist1 = 800;
+    
+    enable_servos();
+ 
+    do//<----------- the position you want it to got to//
+    {
+        set_servo_position(0,dist0); //<-----servo port//
+        msleep(100);
+        set_servo_position(1,dist1); //<-----servo port//
+        msleep(100);
+        dist0=dist0-50;//<------------- speed you want it at
+        dist1=dist1+52;
+    }while (dist0 >= 35 && dist1 <= 2040);
+    
+    create_drive_direct(180,170);// disss
+    msleep(4770);
+    
+    create_stop();
+    
+    
+    //mav(1,-500);
+    //msleep(380);
+    
+    //mav(1,-1);
+    //msleep(100);
+    
+    
+    
+    //create_drive_direct(-100,-100);// disss
+    //msleep(1090);
+    
+    //create_drive_direct(100,-100);
+    //msleep(500);
+    
+    //create_drive_direct(105,105);// disss
+    //msleep(1290);
+    
+    create_stop();
+    
+    mav(0,-500);
+    msleep(700);
+    
+    ao();
+    
+    set_servo_position(0,480);
+    set_servo_position(1,1701);
+    msleep(1000);
+    
+    create_drive_straight(-216);
+    msleep(4000);
+    
+    create_drive_direct(170,-170);
+    msleep(1200);
+    
+    create_drive_straight(100);
+    msleep(1900);
+  
+    create_stop();
+    
+    int disti0 = 35; //<--------- the position you want it at//800
+    int disti1 = 2040;//1996
+    
+    enable_servos();
+ 
+    do//<----------- the position you want it to got to//
+    {
+        set_servo_position(0,disti0); //<-----servo port//
+        msleep(100);
+        set_servo_position(1,disti1); //<-----servo port//
+        msleep(100);
+        disti0=disti0+50;//<------------- speed you want it at
+        disti1=disti1-52;
+    }while (disti0 <= 1400 && disti1 >= 600);
+    
+    create_drive_direct(150,160);
+    msleep(1900);
+    
+    create_stop();
+    
+    mav(0,800);
+    msleep(600);
+    
+    mav(0,1);
+    msleep(50);
+    
+    create_drive_straight(-200);
+    msleep(3350);
+    
+    create_drive_direct(-160,160);
+    msleep(1100);
+    
+    create_drive_straight(-100);
+    msleep(1100);    
+        
+    ao();
+    
+    mav(1,-300);
+    msleep(300);
+    
+    ao();
+    
+    
+    create_drive_straight(-100);
+    msleep(1500);
+    
+    create_stop();
+    
+    mav(1,300);
+    msleep(500);
+    
+    ao();
+    
+    create_drive_straight(130);
+    msleep(1800);
+    
+    create_drive_direct(-100,100);
+    msleep(1970);
+    
+    create_drive_straight(150);
+    msleep(1750);
+    
+    create_drive_direct(40,0);
+    msleep(430);
+    
+    create_stop();
+    
+    mav(1,-500);
+    msleep(800);
+    
+    ao();
+    
+    create_drive_straight(-180);
+    msleep(900);
+    
+    create_stop();
+    
+    mav(1,500);
+    msleep(350);
+    
+    ao();
+    
+    create_drive_straight(160);
+    msleep(900);
+    
+    create_drive_direct(40,0);
+    msleep(200);
+    
+    create_stop();
+    
+    mav(1,-500);
+    msleep(860);
+    
+    ao();
+    
+    create_drive_straight(-180);
+    msleep(900);
+    
+    create_stop();
+    
+    mav(1,500);
+    msleep(470);
+    
+    ao();
+    
+    create_drive_straight(160);
+    msleep(800);
+    
+    create_drive_direct(40,0);
+    msleep(400);
+    
+    create_stop();
+    
+    mav(1,-500);
+    msleep(800);
+    
+    ao();
+    
+    create_drive_straight(-180);
+    msleep(900);
+    
+    create_drive_direct(-100,100);
+    msleep(1450);
+    
+    create_drive_straight(100);
+    msleep(1000);
+    
+    create_stop();
+    
+    mav(1,200);
+    msleep(1600);
+    
+    ao();
+    
+    create_drive_straight(-100);
+    msleep(1000);
+    
+    create_drive_direct(100,-100);
+    msleep(1450);
+    
+    enable_servos();
+    
+    create_drive_direct(80,-80);
+    msleep(2100);
+    
+    create_drive_straight(-240);
+    msleep(1700);
+    
+    create_stop();
+    
+    create_drive_straight(130);
+    msleep(2340);
+    
+    create_drive_direct(-80,80);
+    msleep(2370);
+    
+    create_stop();
+    
+    mav(0,-300);
+    msleep(721);
+    
+    ao();
+    
+    create_drive_straight(100);
+    msleep(2010);
+    
+    create_stop();
+    
+    mav(0,500);
+    msleep(500);
+    
+    ao();
+    
+    create_drive_straight(-200);
+    msleep(800);
+    
+    create_stop();
+    
+    mav(0,-500);
+    msleep(600);
+    
+    ao();
+    
+    create_drive_straight(100);
+    msleep(1100);
+    
+    create_stop();
+    
+    mav(0,500);
+    msleep(600);
+    
+    ao();
+    
+    create_drive_straight(-100);
+    msleep(1200);
+    
+    create_stop();
+    
+    mav(0,-500);
+    msleep(600);
+    
+    ao();
+    
+    create_drive_straight(100);
+    msleep(1600);
+    
+    create_stop();
+    
+    mav(0,500);
+    msleep(600);
+    
+    ao();
+    
+    create_drive_straight(-105);
+    msleep(1560);
+    
+    create_drive_direct(-120,120);
+    msleep(1500);
+    
+    create_drive_straight(105);
+    msleep(1560);
+    
+    create_stop();
+    
+    mav(0,-100);
+    msleep(2000);
+    
+    ao();
+    
+    create_drive_direct(120,-120);
+    msleep(1400);
+    
+    create_drive_straight(-175);
+    msleep(2560);
+    
+    create_drive_direct(120,-120);
+    msleep(1400);
+    
+    create_drive_straight(-180);
+    msleep(2400);
+    
+    create_drive_straight(150);
+    msleep(3500);
+    
+    create_stop();
+    
+    mav(0,-500);
+    msleep(800);
+    
+    ao();
+    
+    create_drive_straight(-100);
+    msleep(300);
+    
+    create_drive_direct(0,100);
+    msleep(300);
+    
+    create_stop();
+    
+    mav(1,-500);
+    msleep(400);
+    
+    mav(1,-5);
+    msleep(50);
+    
+    ao();
+    
+       
+    int distii0 = 1200; //<--------- the position you want it at//
+    int distii1 = 800;
+    
+    enable_servos();
+ 
+    do//<----------- the position you want it to got to//
+    {
+        set_servo_position(0,distii0); //<-----servo port//
+        msleep(100);
+        set_servo_position(1,distii1); //<-----servo port//
+        msleep(100);
+        distii0=distii0-50;//<------------- speed you want it at
+        distii1=distii1+52;
+    }while (distii0 >= 635 && distii1 <= 1440);
+    
+    create_drive_straight(130);
+    msleep(2000);
+    
+    create_stop();
+    
+    mav(1,400);
+    msleep(700);
+    
+    mav(1,-400);
+    msleep(600);
+    
+    mav(1,400);
+    msleep(600);
+    
+    ao();
+    
+    set_servo_position(0,530);
+    set_servo_position(1,1620);
+    msleep(1000);                   
+    
+    create_drive_straight(-130);
+    msleep(1900);
+    
+    create_stop();
+   
+    int distiv0 = 580; //<--------- the position you want it at//800
+    int distiv1 = 1580;//1996
+    
+    enable_servos();
+ 
+    do//<----------- the position you want it to got to//
+    {
+        set_servo_position(0,distiv0); //<-----servo port//
+        msleep(100);
+        set_servo_position(1,distiv1); //<-----servo port//
+        msleep(100);
+        distiv0=distiv0+50;//<------------- speed you want it at
+        distiv1=distiv1-52;
+    }while (distiv0 <= 1400 && distiv1 >= 600);
+    
+    
+    
+    disable_servos();
+    
+    create_disconnect();
+    
+    return 0;
+}
+
+
